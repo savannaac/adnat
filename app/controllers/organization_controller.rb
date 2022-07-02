@@ -1,5 +1,5 @@
 class OrganizationsController < ApplicationController
-    before_action :find_organizations, only: [:show, :edit, :update, :destroy]
+    before_action :find_organizations, only: [:show, :edit, :update, :destroy, :join, :leave]
 
     def index
         @organizations = current_user.organizations
@@ -45,6 +45,19 @@ class OrganizationsController < ApplicationController
     def destroy
         @organization.destroy
     
+        redirect_to user_organizations_path(current_user)
+    end
+
+    def join
+        current_user.update_attribute(:organization_id, @organization.id)
+
+        redirect_to @organization
+        # redirect_to user_organizations_path(current_user)
+    end
+
+    def leave
+        current_user.update_attribute(:organization_id, nil)
+
         redirect_to user_organizations_path(current_user)
     end
 
