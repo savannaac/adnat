@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
     protected
 
-    # adds name input to sign up
+    # adds name field to sign up
     def configure_permitted_parameters
         devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
     end
