@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root "application#home"
 
   resources :organizations do
-    :users do
+    resources :users do
       get "join"
       get "leave"
     end

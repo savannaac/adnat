@@ -6,7 +6,6 @@ class User < ApplicationRecord
 
   belongs_to :organization
   has_many :shifts, dependent: :destroy
-
 #   join table?
-	# has_many :organization_shifts, through: :shifts, source: :organization
+	belongs_to :organization_with_shifts, through: :shifts, source: :organization
 end
