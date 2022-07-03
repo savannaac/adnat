@@ -1,29 +1,31 @@
 class ShiftsController < ApplicationController
+    before_action :find_organizations
     before_action :find_shifts, only: [:destroy]
+
+    def index
+        # @shifts = Organization.shift.all
+        @shifts = Shift.where(organization: params[:organization])
+    end
 
     def new
         @shift = Shift.new
     end
 
     def create
-        @photo.likes.create(user_id: current_user.id)
+        @organization.shifts.create(user_id: current_user.id)
 
-        redirect_to all_path
+        redirect_to user_organization_path(current_user, @organization)
     end
 
     def destroy
-        if !(already_liked?)
-            flash.alert = "oops, can't unlike"
-        else
-            @like.destroy
+        @shift.destroy 
 
-            redirect_to all_path
-        end
+        redirect_to user_organization_path(current_user, @organization)
     end
 
     private
         def shift_params
-            params.require(:shift).permit(:user_id, :photo_id, :type)
+            params.require(:shift).permit(:user_id, :organization_id, :start, :finish, :break_length)
         end
 
         def find_user
