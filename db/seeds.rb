@@ -33,17 +33,21 @@
 
 # Shift.create([
 #     {
-#         organization_id: 1, 
 #         user_id: 1, 
 #         start: DateTime.new(2022, 7, 03, 10), 
 #         finish: DateTime.new(2022, 7, 03, 16), 
 #         break_length: 30  
 #     },
-#     {
-#         organization_id: 1, 
-#         user_id: 2, 
-#         start: DateTime.new(2022, 7, 04, 11), 
-#         finish: DateTime.new(2022, 7, 04, 17), 
-#         break_length: 60  
-#     }
+    # { 
+    #     user_id: 3, 
+    #     start: DateTime.new(2022, 7, 04, 11), 
+    #     finish: DateTime.new(2022, 7, 04, 17), 
+    #     break_length: 60  
+    # },
+    # {
+    #     user_id: 4, 
+    #     start: DateTime.new(2022, 7, 04, 12), 
+    #     finish: DateTime.new(2022, 7, 04, 18), 
+    #     break_length: 45    
+    # }
 # ])
