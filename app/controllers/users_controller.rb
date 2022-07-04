@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-    before_action: :find_user, only: [:show, :edit, :update, :destroy]
-    before_action: :find_organization, only: [:create, :new]
+    # before_action: :find_user, only: [:show, :edit, :update, :destroy]
+    # before_action: :find_organization, only: [:create, :new]
     before_action: :currently_logged_in, only: [:edit, :update, :destroy]
     
         def index
@@ -9,32 +9,33 @@ class UsersController < ApplicationController
         end
     
         def create
-            # @user = User.new(user)
+            @user = User.new(user)
     
-            # if @user.save
-            #     flash.notice = "welcome!"
-            #     session[:user_id] = @user.id
-    
-            #     redirect_to @user
-            # else 
-            #     render :new 
-            # end
-
-            # @organization = Organization.find(params[:id])
-            @user = User.new(user_params)
-            @user.organization_id = params[:organization_id]
-
             if @user.save
                 flash.notice = "welcome!"
                 session[:user_id] = @user.id
     
-                redirect_to @user
-                # redirect_to root_path
+                redirect_to root_path
             else 
                 @user.errors.full_messages
 
                 render :new 
             end
+
+            # @user = User.new(user_params)
+            # @user.organization_id = params[:organization_id]
+
+            # if @user.save
+            #     flash.notice = "welcome!"
+            #     session[:user_id] = @user.id
+    
+            #     # redirect_to @user
+            #     redirect_to root_path
+            # else 
+            #     @user.errors.full_messages
+
+            #     render :new 
+            # end
         end
     
         def new

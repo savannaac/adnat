@@ -8,7 +8,7 @@
 
 # adnat seeds
 
-# organizations = Organization.create([{ name: "Tea Time", hourly_rate: 15 }, { name: "Rock and Bowl", hourly_rate: 17 }])
+organizations = Organization.create([{ name: "Drip Drop", hourly_rate: 25 }, { name: "Garden Gnomes", hourly_rate: 17 }, { name: "Tea Time", hourly_rate: 15 }])
 
 # User.create([
 #     { 
@@ -18,17 +18,23 @@
 #         password: "123456"
 #     },
 #     {
+#         organization_id: 3, 
+#         name: "Ziggy", 
+#         email: "ziggy@gmail.com", 
+#         password: "Ziggy!" 
+#     },
+#     {
 #         organization_id: 1, 
 #         name: "CHRIS", 
 #         email: "chris@gmail.com", 
 #         password: "303303"
 #     },
-#     {
-#         organization_id: 1, 
-#         name: "Ziggy", 
-#         email: "ziggy@gmail.com", 
-#         password: "123456" 
-#     }
+    # {
+        # organization_id: 2, 
+        # name: "Edson", 
+        # email: "edson@gmail.com", 
+        # password: "012345" 
+    # }
 # ])
 
 # Shift.create([

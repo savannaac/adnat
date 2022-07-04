@@ -1,3 +1,14 @@
-<h1>home</h1>
+<h1>ADNAT</h1> 
 
-<%= button_to "sign out", destroy_user_session_path, method: "delete"%><br><br>
+<% if current_user %>  
+    <ul>
+        <%= button_to "sign out", destroy_user_session_path, method: "delete"%><br><br>
+    </ul>
+<% else %>
+   <center><div class="">
+    <ul>
+        <li id="sign-up"><%= link_to "sign up", new_user_registration_path %></li>
+        <li id="log-in"><%= link_to "log in", new_user_session_path %></li>
+    </ul>
+    </div></center>
+<% end %>
