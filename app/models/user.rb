@@ -8,5 +8,5 @@ class User < ApplicationRecord
   has_many :shifts, dependent: :destroy
   
 #   join table?
-	# has_many :organization_with_shifts, through: :shifts, source: :organization
+	has_many :organizations_with_shifts, through: :shifts, source: :organization
 end
