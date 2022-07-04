@@ -32,7 +32,7 @@ class UsersController < ApplicationController
                 # redirect_to root_path
             else 
                 @user.errors.full_messages
-                
+
                 render :new 
             end
         end
@@ -59,7 +59,7 @@ class UsersController < ApplicationController
         def destroy
             @user.destroy
             
-            redirect_to root_path
+            redirect_to login_path
         end
     
     private
