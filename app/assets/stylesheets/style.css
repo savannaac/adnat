@@ -1,0 +1,79 @@
+body {
+    background-color: #F2F3F4;
+}
+
+h1 {
+    color: #000;
+    font-family: futura, sans-serif;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+h2 {
+    color: #626567;
+    font-size: 2rem;
+    font-family: futura, sans-serif;
+    font-weight: 100;
+    margin-bottom: -.1rem;
+    text-transform: uppercase;
+}
+
+h4 {
+    color: #909497;
+    font-size: .8rem;
+    font-family: futura, sans-serif;
+    font-weight: 100;
+    margin-bottom: -1rem; 
+}
+
+a:visited, a:link, a:active
+{
+    color: #626567;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+.shared-links {
+    color: #909497;
+    font-size: .8rem;
+    font-family: futura, sans-serif;
+    font-weight: 100;
+    margin-bottom: -1rem;
+    margin-top: 1rem; 
+}
+
+.button {
+    background-color: #fff;
+    border: 1px solid #D0D3D4;
+    border-radius: 10px;
+    box-shadow: 0 3px #E5E7E9;
+    color: #626567;
+    font-family: century gothic, sans-serif;
+    padding: 2px;
+    width: 5rem;  
+}
+
+.button:hover {
+    background-color: #F2F3F4;
+    color: #000;
+}
+
+/* sign up & login */
+.registration-card {
+    background-color: #fff;
+    border: 1px solid #D0D3D4;
+    border-radius: 10px;
+    box-shadow: 3px 6px #E5E7E9;
+    margin: auto;
+    width: 25%;
+}
+
+.registration-fields {
+    margin-top: 1rem;
+   padding-bottom: 1.5rem;
+  }
