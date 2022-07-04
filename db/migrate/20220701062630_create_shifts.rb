@@ -3,7 +3,7 @@ class CreateShifts < ActiveRecord::Migration[7.0]
     create_table :shifts do |t|
       t.integer :user_id
 
-      t.integer :organization_id
+      # t.integer :organization_id
 
       t.datetime :start 
       t.datetime :finish

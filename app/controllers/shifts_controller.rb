@@ -1,10 +1,11 @@
 class ShiftsController < ApplicationController
     before_action :find_organizations
+    before_action :find_user
     before_action :find_shifts, only: [:destroy]
 
     def index
-        # @shifts = Organization.shift.all
-        @shifts = Shift.where(organization: params[:organization])
+        @shifts = Shift.all
+        # @shifts = Shift.where(organization: params[:organization])
     end
 
     def new
@@ -26,6 +27,10 @@ class ShiftsController < ApplicationController
     private
         def shift_params
             params.require(:shift).permit(:user_id, :organization_id, :start, :finish, :break_length)
+        end
+
+        def find_organizations
+            @organization = Organization.find(params[:id])
         end
 
         def find_user

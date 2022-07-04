@@ -2,7 +2,8 @@ class OrganizationsController < ApplicationController
     before_action :find_organizations, only: [:show, :edit, :update, :destroy, :join, :leave]
 
     def index
-        @organizations = current_user.organizations
+        # @organizations = current_user.organizations
+        @organizations = Organization.all
     end
 
     def new
@@ -10,18 +11,28 @@ class OrganizationsController < ApplicationController
     end
     
     def create
-        @organization = current_user.organizations.build(organization_params)
-        @organization.user_id = current_user.id
+        # @organization = current_user.organizations.build(organization_params)
+        # @organization.user_id = current_user.id
         
-        if @organization.save
-            flash.notice = "organization created"
+        # if @organization.save
+        #     flash.notice = "organization created"
 
-            redirect_to user_organization_path(current_user, @organization)
+        #     redirect_to user_organization_path(current_user, @organization)
+        # else
+        #     @organization.errors.full_messages
+
+        #     render :new
+        #     # redirect_to root_path
+        # end
+
+        @organization = Organization.new(organization)
+
+        if @organization.save 
+            flash.notice = "organization saved"
+
+            redirect_to root_path
         else
-            @organization.errors.full_messages
-
             render :new
-            # redirect_to root_path
         end
     end
 

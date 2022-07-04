@@ -23,7 +23,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_01_062630) do
 
   create_table "shifts", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "organization_id"
     t.datetime "start"
     t.datetime "finish"
     t.integer "break_length"

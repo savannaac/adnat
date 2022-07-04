@@ -10,20 +10,29 @@
 
 # organizations = Organization.create([{ name: "Tea Time", hourly_rate: 15 }, { name: "Rock and Bowl", hourly_rate: 17 }])
 
-# User.create([
-#     { 
-#         organization_id: 1, 
-#         name: "Sav", 
-#         email: "savannaac@gmail.com", 
-#         password: "12345"
-#     },
-#     {
-#         organization_id: 1, 
-#         name: "CHRIS", 
-#         email: "chris@gmail.com", 
-#         password: "303"
-#     }
-# ])
+User.create([
+    { 
+        organization_id: 1, 
+        # user_id: 1,
+        name: "Sav", 
+        email: "savannaac@gmail.com", 
+        password: "123456"
+    },
+    {
+        organization_id: 1, 
+        # user_id: 2, 
+        name: "CHRIS", 
+        email: "chris@gmail.com", 
+        password: "303303"
+    },
+    {
+        organization_id: 1, 
+        # user_id: 2, 
+        name: "Ziggy", 
+        email: "ziggy@gmail.com", 
+        password: "123456" 
+    }
+])
 
 # Shift.create([
 #     {
