@@ -1,5 +1,5 @@
 class OrganizationsController < ApplicationController
-    before_action :find_organizations, only: [:show, :edit, :update, :destroy, :join, :leave]
+    before_action :find_organizations, only: [:show, :edit, :update, :destroy]
 
     def index
         # @organizations = current_user.organizations
@@ -48,7 +48,7 @@ class OrganizationsController < ApplicationController
     def update
         if @organization.update(organization_params)
 
-            redirect_to user_organization_path(current_user, @organization)
+            redirect_to organization_path(@organization)
         else
             @organization.errors.full_messages
             
@@ -56,23 +56,17 @@ class OrganizationsController < ApplicationController
         end
     end
 
+    def join
+        @organization = Organization.find(params[:id])
+        current_user.update_attribute(:organization_id, @organization)
+
+        redirect_to root_path
+    end
+
     def destroy
         @organization.destroy
     
-        redirect_to user_organizations_path(current_user)
-    end
-
-    def join
-        current_user.update_attribute(:organization_id, @organization.id)
-
-        redirect_to @organization
-        # redirect_to user_organizations_path(current_user)
-    end
-
-    def leave
-        current_user.update_attribute(:organization_id, nil)
-
-        redirect_to user_organizations_path(current_user)
+        redirect_to root_path
     end
 
     private 

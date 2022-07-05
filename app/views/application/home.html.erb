@@ -13,14 +13,20 @@
             <%= button_to "sign out", destroy_user_session_path, method: "delete", :class => "button"%>
     
             <div class="profile-content">
-                <h3>your organization:</h3>
-                <p><%= current_user.organization.name %></p>
+            <h3>your organization:</h3>
+                <% if current_user.organization_id.nil? %>
+                    <p>please join an organization</p>
+                    <% else %>
+                        <p><%= current_user.organization.name %></p>
+                <% end %>
 
                 <h3>all organizations:</h3>
                 <div class="organizations-container">
                     <% @organizations = Organization.all %>
                     <% @organizations.map do |organization| %>
-                        <p class="organizations"><%= organization.name %></p>
+                        <div class="organizations">
+                        <%= link_to(organization.name, organization_path(organization)) %>
+                        </div>
                     <% end %>
                 </div>
             </div>

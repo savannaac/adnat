@@ -9,7 +9,12 @@
         </center>
 
     <div class="profile-content">
-        <h3><%= @organization.name %></h3> 
+            <h3><%= @organization.name %></h3>
+            <div class="smaller-margins">
+            <%= button_to "delete", @organization, method: "delete", :class => "button" %><br /> 
+            <%= link_to 'join', edit_organization_user_path(current_user, @organization), :class => "button" %>
+            <%= link_to 'leave', organization_user_leave_path(current_user, @organization), :class => "button" %>
+            </div>
         <h5>hourly rate: </h5>
         <p><%= @organization.hourly_rate %></p>
         
@@ -19,8 +24,8 @@
             <p><%= user.name %><p>
         <% end %>
 
-        <br><h3>edit organization</h3>
-            <%= form_with model: @organization, url: organizations_path, method: "patch" do |f| %>
+        <br><h3>edit current organization</h3>
+            <%= form_with model: @organization, url: organization_path(@organization), method: "patch" do |f| %>
                 <%= f.text_field :name, placeholder: "name", autofocus: true %><br><br>
                 <%= f.text_field :hourly_rate, placeholder: "hourly rate", autofocus: true %><br><br>
 

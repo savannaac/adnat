@@ -9,7 +9,7 @@
         </center>
     
             <div class="profile-content">
-                <h3>add organization</h3>
+                <h3>add a new organization</h3>
 
                 <%= form_with model: @organization, url: organizations_path, method: "post" do |f| %>
 
@@ -18,6 +18,16 @@
 
                     <%= f.submit "add", :class => "button" %>
                 <% end %>
+
+                <h3>existing organizations:</h3>
+                <div class="organizations-container">
+                    <% @organizations = Organization.all %>
+                    <% @organizations.map do |organization| %>
+                        <div class="organizations">
+                        <%= link_to(organization.name, organization_path(organization)) %>
+                        </div>
+                    <% end %>
+                </div>
             </div>
     </div>
 <% else %>

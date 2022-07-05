@@ -69,6 +69,10 @@ p {
     flex-direction: row;
 }
 
+.smaller-margins {
+    margin-top: -.7rem;
+}
+
 .navigation {
     margin-bottom: .5rem;
 }
@@ -115,7 +119,8 @@ ul li{
     box-shadow: 0 3px #E5E7E9;
     color: #626567;
     font-family: century gothic, sans-serif;
-    padding: 2px;
+    margin-top: .2rem;
+    padding: 5px;
     width: 5rem;  
 }
 
@@ -165,9 +170,9 @@ ul li{
 .organizations-container {
     border: 1px solid red;
     float: left;
-    height: 10vh;
+    height: 15vh;
     margin-top: -1rem;
     overflow: scroll;
     padding-top: 1.5rem;
-    width: 25vh;
+    width: 40vh;
 }

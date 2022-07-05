@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
     # before_action: :find_user, only: [:show, :edit, :update, :destroy]
     # before_action: :find_organization, only: [:create, :new]
-    before_action: :currently_logged_in, only: [:edit, :update, :destroy]
+    # before_action: :currently_logged_in, only: [:edit, :update, :destroy]
     
         def index
             @organization = Organization.includes(:users).find(params[:organization_id])
@@ -21,21 +21,6 @@ class UsersController < ApplicationController
 
                 render :new 
             end
-
-            # @user = User.new(user_params)
-            # @user.organization_id = params[:organization_id]
-
-            # if @user.save
-            #     flash.notice = "welcome!"
-            #     session[:user_id] = @user.id
-    
-            #     # redirect_to @user
-            #     redirect_to root_path
-            # else 
-            #     @user.errors.full_messages
-
-            #     render :new 
-            # end
         end
     
         def new
@@ -56,6 +41,19 @@ class UsersController < ApplicationController
                 render :edit
             end
         end
+
+        def join
+            @organization = Organization.find(params[:organization][:id])
+            current_user.update_attribute(:organization_id, @organization.id)
+
+            redirect_to root_path
+        end
+
+         def leave
+            current_user.update_attribute(:organization_id, nil)
+
+            redirect_to root_path
+        end
     
         def destroy
             @user.destroy
@@ -68,9 +66,9 @@ class UsersController < ApplicationController
             @user = User.find_by(params[:id])
         end
 
-        def find_organization
-            @organization = Organization.find(params[:id])
-        end
+        # def find_organization
+        #     @organization = Organization.find(params[:id])
+        # end
     
         def currently_logged_in
             unless logged_in?
