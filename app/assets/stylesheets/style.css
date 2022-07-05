@@ -19,12 +19,42 @@ h2 {
     text-transform: uppercase;
 }
 
+h3 {
+    color: #626567;
+    /* float: left; */
+    font-size: 1.2rem;
+    font-family: futura, sans-serif;
+    font-weight: 100;
+    text-align: left;
+}
+
 h4 {
     color: #909497;
     font-size: .8rem;
     font-family: futura, sans-serif;
     font-weight: 100;
     margin-bottom: -1rem; 
+}
+
+p {
+    color: #000;
+    font-size: .9rem;
+    font-family: futura, sans-serif;
+    font-weight: 100;
+    margin-left: 1rem;
+    margin-top: -1rem;
+    text-align: left;
+}
+
+.organizations {
+    color: #000;
+    font-size: .9rem;
+    font-family: futura, sans-serif;
+    font-weight: 100;
+    margin-left: 1rem;
+    margin-top: -1rem;
+    padding: .5rem;
+    text-align: left;
 }
 
 a:visited, a:link, a:active
@@ -40,11 +70,21 @@ a:hover {
 
 .shared-links {
     color: #909497;
-    font-size: .8rem;
     font-family: futura, sans-serif;
+    font-size: .8rem;
     font-weight: 100;
     margin-bottom: -1rem;
     margin-top: 1rem; 
+}
+
+ul li{
+    display: inline;
+    font-family: "Franklin Gothic", sans-serif;
+    font-size: 1rem;
+    /* float: left; */
+    /* line-height: 150%; */
+    list-style-type: none;
+    padding-right: 11px;
 }
 
 .button {
@@ -77,3 +117,36 @@ a:hover {
     margin-top: 1rem;
    padding-bottom: 1.5rem;
   }
+
+/* app container */
+.profile-container {
+    background: #fff;
+    border: 1px solid #D0D3D4;
+    border-radius: 10px;
+    box-shadow: 3px 6px #E5E7E9;
+    height: 75vh;
+    margin: auto;
+    margin-top: 5rem;
+    overflow: scroll;
+    width: 50vh;
+}
+
+.profile-content {
+    background: #fff;
+    border-top: 1px solid #D0D3D4;;
+    height: 60vh;
+    margin: auto;
+    margin-top: 2rem;
+    overflow: scroll;
+    width: 45vh;
+}
+
+.organizations-container {
+    border: 1px solid red;
+    float: left;
+    height: 10vh;
+    margin-top: -1rem;
+    overflow: scroll;
+    padding-top: 1.5rem;
+    width: 25vh;
+}
