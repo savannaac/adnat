@@ -4,6 +4,12 @@
     <div class="profile-container">
         <center>
             <h2><%= current_user.name %></h2><br>
+
+            <div class="navigation">
+                <div class="flex-row">
+                    <%= link_to "add organization", new_organization_path %>
+                </div>
+            </div>
             <%= button_to "sign out", destroy_user_session_path, method: "delete", :class => "button"%>
     
             <div class="profile-content">

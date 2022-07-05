@@ -25,13 +25,16 @@ class OrganizationsController < ApplicationController
         #     # redirect_to root_path
         # end
 
-        @organization = Organization.new(organization)
+        @organization = Organization.new(organization_params)
 
         if @organization.save 
             flash.notice = "organization saved"
 
-            redirect_to root_path
+            # redirect_to root_path
+            redirect_to organization_path(@organization)
         else
+            @organization.errors.full_messages
+
             render :new
         end
     end

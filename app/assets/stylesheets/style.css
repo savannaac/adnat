@@ -36,6 +36,13 @@ h4 {
     margin-bottom: -1rem; 
 }
 
+h5 {
+    color: #909497;
+    font-size: .8rem;
+    font-family: futura, sans-serif;
+    font-weight: 100;
+}
+
 p {
     color: #000;
     font-size: .9rem;
@@ -57,9 +64,23 @@ p {
     text-align: left;
 }
 
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.navigation {
+    margin-bottom: .5rem;
+}
+
 a:visited, a:link, a:active
 {
-    color: #626567;
+    color: #909497;
+    font-family: futura, sans-serif;
+    font-size: .8rem;
+    font-weight: 100;
+    margin: auto;
+    /* margin-right: 1rem; */
     text-decoration: none;
 }
 
