@@ -3,7 +3,7 @@
 <% if current_user %>  
     <div class="profile-container">
         <center>
-            <h2><%= current_user.name %></h2><br>
+            <%= render "partials/name" %>
 
             <div class="navigation">
                 <div class="flex-row">
@@ -11,7 +11,6 @@
                     <%= link_to "add shift", new_user_shift_path(current_user) %>
                 </div>
             </div>
-            <%= button_to "sign out", destroy_user_session_path, method: "delete", :class => "button"%>
     
             <div class="profile-content">
             <h3>your organization:</h3>
@@ -34,10 +33,5 @@
         </center>
     </div>
 <% else %>
-   <center>
-        <ul>
-            <li id="sign-up"><%= link_to "sign up", new_user_registration_path %></li>
-            <li id="log-in"><%= link_to "log in", new_user_session_path %></li>
-        </ul>
-    </center>
+   <%= render "partials/links" %>
 <% end %>

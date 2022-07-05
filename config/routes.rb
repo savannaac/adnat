@@ -13,10 +13,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :organizations do
-    get "join"
-  end
-
   resources :users do
     resources :shifts
   end

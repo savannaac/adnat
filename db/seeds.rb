@@ -8,7 +8,7 @@
 
 # adnat seeds
 
-organizations = Organization.create([{ name: "Drip Drop", hourly_rate: 25 }, { name: "Garden Gnomes", hourly_rate: 17 }, { name: "Tea Time", hourly_rate: 15 }])
+# Organization.create([{ name: "Drip Drop", hourly_rate: 25 }, { name: "Garden Gnomes", hourly_rate: 17 }, { name: "Tea Time", hourly_rate: 15 }])
 
 # User.create([
 #     { 

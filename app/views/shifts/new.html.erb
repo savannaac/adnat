@@ -3,9 +3,13 @@
 <% if current_user %>
     <div class="profile-container">
         <center>
-            <h2><%= current_user.name %></h2><br>
-            <%= link_to "← home", root_path %>
-            <%= button_to "sign out", destroy_user_session_path, method: "delete", :class => "button"%>
+            <%= render "partials/name" %>
+
+            <div class="navigation">
+                <div class="flex-row">
+                    <%= link_to "← home", root_path %>
+                </div>
+            </div>
         </center>
 
         <div class="profile-content">
@@ -28,10 +32,5 @@
         </div>
     </div>
 <% else %>
-    <center>
-         <ul>
-             <li id="sign-up"><%= link_to "sign up", new_user_registration_path %></li>
-             <li id="log-in"><%= link_to "log in", new_user_session_path %></li>
-         </ul>
-    </center>
+    <%= render "partials/links" %>
 <% end %>
