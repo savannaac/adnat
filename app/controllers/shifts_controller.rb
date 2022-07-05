@@ -16,13 +16,13 @@ class ShiftsController < ApplicationController
     def create
         # @organization.shifts.create(user_id: current_user.id, shift_params)
 
-        @shift = current_user.shifts.build(shift_params)
+        @shift = current_user.shifts.build!(shift_params)
         @shift.user_id = current_user.id
         
         if @shift.save
             flash.notice = "shift created"
 
-            redirect_to user_shift_path(current_user, @shift)
+            redirect_to root_path
         else
             @shift.errors.full_messages
 

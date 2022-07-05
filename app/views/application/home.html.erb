@@ -8,6 +8,7 @@
             <div class="navigation">
                 <div class="flex-row">
                     <%= link_to "add organization", new_organization_path %>
+                    <%= link_to "add shift", new_user_shift_path(current_user) %>
                 </div>
             </div>
             <%= button_to "sign out", destroy_user_session_path, method: "delete", :class => "button"%>

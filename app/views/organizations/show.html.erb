@@ -12,7 +12,7 @@
             <h3><%= @organization.name %></h3>
             <div class="smaller-margins">
             <%= button_to "delete", @organization, method: "delete", :class => "button" %><br /> 
-            <%= link_to 'join', edit_organization_user_path(current_user, @organization), :class => "button" %>
+            <%= link_to 'join', organization_user_join_path(current_user, @organization), :class => "button" %>
             <%= link_to 'leave', organization_user_leave_path(current_user, @organization), :class => "button" %>
             </div>
         <h5>hourly rate: </h5>
@@ -21,8 +21,16 @@
         <h5>members: </h5>
         <% users = @organization.users %>
         <% users.each do |user| %>
-            <p><%= user.name %><p>
+            <p><%= user.name %> (employee id: <%= user.id %>)<p>
         <% end %>
+
+        <br><h5>shifts:</h5>
+        <% shifts = @organization.shifts %>
+        <% shifts.each do |shift| %>
+            <p>employee: <%= shift.user_id %><p>
+            <p>break length: <%= shift.break_length %><p><br>
+        <% end %>
+
 
         <br><h3>edit current organization</h3>
             <%= form_with model: @organization, url: organization_path(@organization), method: "patch" do |f| %>

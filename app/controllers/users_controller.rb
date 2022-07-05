@@ -43,7 +43,7 @@ class UsersController < ApplicationController
         end
 
         def join
-            @organization = Organization.find(params[:organization][:id])
+            @organization = Organization.find(params[:organization_id])
             current_user.update_attribute(:organization_id, @organization.id)
 
             redirect_to root_path
