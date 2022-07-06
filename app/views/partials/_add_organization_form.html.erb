@@ -1,0 +1,7 @@
+<%= form_with model: @organization, url: organizations_path, method: "post" do |f| %>
+
+    <%= f.text_field :name, placeholder: "name", autofocus: true %><br><br>
+    <%= f.text_field :hourly_rate, placeholder: "hourly rate", autofocus: true %><br><br>
+
+    <%= f.submit "add", :class => "button" %>
+<% end %>

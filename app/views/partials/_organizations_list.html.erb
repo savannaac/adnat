@@ -1,0 +1,8 @@
+<div class="organizations-container">
+    <% @organizations = Organization.all %>
+        <% @organizations.map do |organization| %>
+            <div class="organizations">
+                <%= link_to(organization.name, organization_path(organization)) %>
+            </div>
+        <% end %>
+</div>

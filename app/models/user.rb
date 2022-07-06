@@ -10,8 +10,5 @@ class User < ApplicationRecord
 #   join table?
 	has_many :organizations_with_shifts, through: :shifts, source: :organization
 
-  # allows empty field
-  # validates :organization_id, exclusion: { in: [nil] }
-
   validates_uniqueness_of :email
 end

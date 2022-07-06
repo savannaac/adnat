@@ -10,20 +10,6 @@ class OrganizationsController < ApplicationController
     end
     
     def create
-        # @organization = current_user.organizations.build(organization_params)
-        # @organization.user_id = current_user.id
-        
-        # if @organization.save
-        #     flash.notice = "organization created"
-
-        #     redirect_to user_organization_path(current_user, @organization)
-        # else
-        #     @organization.errors.full_messages
-
-        #     render :new
-        #     # redirect_to root_path
-        # end
-
         @organization = Organization.new(organization_params)
 
         if @organization.save 

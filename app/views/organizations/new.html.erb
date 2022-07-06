@@ -14,24 +14,10 @@
             
             <div class="profile-content">
                 <h3>add a new organization</h3>
-
-                <%= form_with model: @organization, url: organizations_path, method: "post" do |f| %>
-
-                    <%= f.text_field :name, placeholder: "name", autofocus: true %><br><br>
-                    <%= f.text_field :hourly_rate, placeholder: "hourly rate", autofocus: true %><br><br>
-
-                    <%= f.submit "add", :class => "button" %>
-                <% end %>
-
+                <%= render "partials/add_organization_form" %>
+               
                 <h3>existing organizations:</h3>
-                <div class="organizations-container">
-                    <% @organizations = Organization.all %>
-                    <% @organizations.map do |organization| %>
-                        <div class="organizations">
-                        <%= link_to(organization.name, organization_path(organization)) %>
-                        </div>
-                    <% end %>
-                </div>
+                <%= render "partials/organizations_list" %>
             </div>
     </div>
 <% else %>

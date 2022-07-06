@@ -8,19 +8,18 @@
 
 # adnat seeds
 
-# Organization.create!([{ name: "Drip Drop", hourly_rate: 20 }, { name: "Garden Gnomes", hourly_rate: 25 }, { name: "Pup Squad", hourly_rate: 30 }])
+# Organization.create([
+#     { name: "Drip Drop", hourly_rate: 20 }, { name: "Garden Gnomes", hourly_rate: 25 }, { name: "Pup Squad", hourly_rate: 30 }
+# ])
 
-# User.create!([
+# User.create([
 #     { 
-#         organization_id: 1, 
-#         name: "Blob Bloberson", 
-#         email: "blob@gmail.com", 
-#         password: "123456"
+#       organization_id: 1, name: "Blob Bloberson", email: "blob@gmail.com", password: "123456"
 #     }
 # ])
 
-# Shift.create!([
+# Shift.create([
 #     {
-#         user_id: 1, organization_id: 1, start: DateTime.new(2022, 7, 03, 12), finish: DateTime.new(2022, 7, 03, 16), break_length: 600  
+#       user_id: 1, organization_id: 1, start: DateTime.new(2022, 7, 03, 12), finish: DateTime.new(2022, 7, 03, 16), break_length: 600  
 #     }
 # ])
