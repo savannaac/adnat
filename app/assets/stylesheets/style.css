@@ -11,7 +11,7 @@ h1 {
 }
 
 h2 {
-    color: #424949;
+    color: #5D6D7E;
     font-size: 2rem;
     font-family: futura, sans-serif;
     font-weight: 100;
@@ -28,6 +28,7 @@ h3 {
     text-align: left;
 }
 
+/* for password validation */
 h4 {
     color: #909497;
     font-size: .8rem;
@@ -79,7 +80,7 @@ p {
     padding-top: 2rem;
 }
 
-/* navigation links */
+/* navigation links and buttons */
 .flex-row {
     display: flex;
     flex-direction: row;
@@ -103,12 +104,11 @@ p {
 
 a:visited, a:link, a:active
 {
-    color: #909497;
+    color: #B7950B;
     font-family: futura, sans-serif;
-    font-size: .8rem;
+    font-size: .9rem;
     font-weight: 100;
     margin: auto;
-    /* margin-right: 1rem; */
     text-decoration: none;
 }
 
@@ -139,11 +139,10 @@ ul li{
 .button {
     background-color: #fff;
     border: 1px solid #D0D3D4;
-    border-radius: 10px;
+    border-radius: 7px;
     box-shadow: 0 3px #E5E7E9;
     color: #626567;
     font-family: century gothic, sans-serif;
-    margin-top: .2rem;
     padding: 5px;
     width: 5rem;  
 }
@@ -185,7 +184,7 @@ ul li{
     border: 1px solid #D0D3D4;
     border-radius: 10px;
     box-shadow: 3px 6px #E5E7E9;
-    height: 75vh;
+    height: 80vh;
     margin: auto;
     overflow: scroll;
     width: 75vh;
@@ -208,11 +207,10 @@ ul li{
     margin: auto;
     margin-top: 2rem;
     overflow: scroll;
-    width: 60vh;
+    width: 65vh;
 }
 
 .organizations-container {
-    border: 1px solid red;
     float: left;
     height: 15vh;
     margin-top: -1rem;

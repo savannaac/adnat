@@ -8,40 +8,19 @@
 
 # adnat seeds
 
-# Organization.create([{ name: "Drip Drop", hourly_rate: 25 }, { name: "Garden Gnomes", hourly_rate: 20 }, { name: "Pup Squad", hourly_rate: 30 }])
+# Organization.create!([{ name: "Drip Drop", hourly_rate: 20 }, { name: "Garden Gnomes", hourly_rate: 25 }, { name: "Pup Squad", hourly_rate: 30 }])
 
-# User.create([
+# User.create!([
 #     { 
 #         organization_id: 1, 
-#         name: "Sav", 
-#         email: "savannaac@gmail.com", 
+#         name: "Blob Bloberson", 
+#         email: "blob@gmail.com", 
 #         password: "123456"
-#     },
-#     {
-#         organization_id: 3, 
-#         name: "Ziggy", 
-#         email: "ziggy@gmail.com", 
-#         password: "Ziggy!" 
-#     },
-#     {
-#         organization_id: 2, 
-#         name: "CHRIS", 
-#         email: "chris@gmail.com", 
-#         password: "303303"
-#     },
-    # {
-    #     organization_id: 2, 
-    #     name: "Edson", 
-    #     email: "edson@gmail.com", 
-    #     password: "012345" 
-    # }
+#     }
 # ])
 
-# Shift.create([
+# Shift.create!([
 #     {
-#         user_id: 1, organization_id: 1, start: DateTime.new(2022, 7, 03, 10), finish: DateTime.new(2022, 7, 03, 16), break_length: 30  
-#     },
-    # { 
-    #   user_id: 4, organization_id: 1, start: DateTime.new(2022, 7, 05, 10), finish: DateTime.new(2022, 7, 05, 16), break_length: 60 
-    # }
+#         user_id: 1, organization_id: 1, start: DateTime.new(2022, 7, 03, 12), finish: DateTime.new(2022, 7, 03, 16), break_length: 600  
+#     }
 # ])

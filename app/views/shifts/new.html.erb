@@ -14,7 +14,10 @@
         </center>
 
         <div class="profile-content">
-            <h3>your organization: <%= current_user.organization.name %></h3>
+            <div class="flex-row">
+                <h3>your organization:</h3> 
+                <h3 style="color: #D4AC0D; margin-left: .4rem"><%= current_user.organization.name %></h3>
+            </div>
 
             <h3>add shift</h3>
                 <%= form_with model: @shift, url: user_shifts_path(current_user, @shift), method: "post" do |f| %>

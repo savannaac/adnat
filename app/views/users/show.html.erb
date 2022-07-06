@@ -17,7 +17,10 @@
                     <h3>welcome!</h3>
                     <h4>join or add an organization</h4>
             <% else %>
-                    <h3>your organization: <%= @organization.name %></h3>
+                    <div class="flex-row">
+                        <h3>your organization:</h3> 
+                        <h3 style="color: #D4AC0D; margin-left: .4rem"><%= @organization.name %></h3>
+                    </div>
 
                     <div class="smaller-margins"> 
                         <%= link_to 'leave', organization_user_leave_path(current_user, @organization), :class => "button" %>
