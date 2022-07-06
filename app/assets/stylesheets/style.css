@@ -193,6 +193,16 @@ ul li{
     width: 45vh;
 }
 
+.user-profile-content {
+    background: #fff;
+    border-top: 1px solid #D0D3D4;;
+    height: 60vh;
+    margin: auto;
+    margin-top: 2rem;
+    overflow: scroll;
+    width: 60vh;
+}
+
 .organizations-container {
     border: 1px solid red;
     float: left;

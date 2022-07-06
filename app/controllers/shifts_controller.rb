@@ -21,7 +21,7 @@ class ShiftsController < ApplicationController
         if @shift.save
             flash.notice = "shift created"
 
-            redirect_to root_path
+            redirect_to user_path(current_user)
         else
             @shift.errors.full_messages
 

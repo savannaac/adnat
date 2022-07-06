@@ -13,12 +13,8 @@
         </center>
 
         <div class="profile-content">
-        <h3>your organization:</h3>
-                <% if current_user.organization_id.nil? %>
-                    <p>please join an organization</p>
-                    <% else %>
-                        <p><%= current_user.organization.name %></p>
-                <% end %>
+            <h3>your organization: <%= current_user.organization.name %></h3>
+            
             <h3>add shift</h3>
                 <%= form_with model: @shift, url: new_user_shift_path(current_user, @shift), method: "post" do |f| %>
 

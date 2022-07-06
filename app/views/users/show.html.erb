@@ -12,7 +12,7 @@
             </div>
         </center>
 
-    <div class="profile-content">
+    <div class="user-profile-content">
             <h3>your organization: <%= @organization.name %></h3>
 
             <div class="smaller-margins"> 
@@ -31,15 +31,22 @@
                     <p>shift date:<br> <%= shift.created_at.strftime("%m-%d-%Y") %></p>
                     <p>start time:<br> <%= shift.start.strftime("%I:%M%p") %></p>
                     <p>end time:<br> <%= shift.finish.strftime("%I:%M%p") %></p>
+                    <p>break length:<br> <%= shift.break_length %><p>
                     <p>hours worked:<br>
                         <% @shift_length = shift.finish.to_time - shift.start.to_time %>
                         <% @length_in_minutes = @shift_length / 60 %>
                         <% @minutes_worked = @length_in_minutes - shift.break_length %>
                         <% @hours_worked = @minutes_worked / 60 %>
-                        
+
                         <%= @hours_worked %>
                     </p>
-                    <p>break length:<br> <%= shift.break_length %><p>
+                    <p>wages earned: 
+                    <% @shift_cost = @hours_worked * shift.organization_hourly_rate %>
+
+                    $<%= @shift_cost %>
+                </p>
+
+
                 </div>
             </div>
         <% end %>
