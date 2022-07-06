@@ -53,6 +53,14 @@ p {
     text-align: left;
 }
 
+.field-labels {
+    color: #000;
+    font-size: .8rem;
+    font-family: futura, sans-serif;
+    font-weight: 100;
+    margin-left: 1rem;
+}
+
 /* text styling for object lists */
 .organizations {
     color: #000;

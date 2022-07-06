@@ -28,7 +28,7 @@
             <div class="bottom-border">
                 <div class="flex-row">
                     <p>employee:<br> <%= shift.user_name %><p>
-                    <p>shift date:<br> <%= shift.created_at.strftime("%m-%d-%Y") %></p>
+                    <p>shift date:<br> <%= shift.start.strftime("%m-%d-%Y") %></p>
                     <p>start time:<br> <%= shift.start.strftime("%I:%M%p") %></p>
                     <p>end time:<br> <%= shift.finish.strftime("%I:%M%p") %></p>
                     <p>break length:<br> <%= shift.break_length %><p>

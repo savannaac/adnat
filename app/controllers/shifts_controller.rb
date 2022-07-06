@@ -15,7 +15,7 @@ class ShiftsController < ApplicationController
     def create
         # @organization.shifts.create(user_id: current_user.id, shift_params)
 
-        @shift = current_user.shifts.build!(shift_params)
+        @shift = current_user.shifts.build(shift_params)
         @shift.user_id = current_user.id
         
         if @shift.save
