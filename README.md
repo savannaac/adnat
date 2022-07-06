@@ -35,7 +35,7 @@ Run migrations
 Run `rails s`
 
 ## Usage
-When the **ADNAT** is up and running, 
+When **ADNAT** is up and running, 
 
 ### Sign Up or Log In
 1. Sign up for an account or Log In
