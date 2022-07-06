@@ -2,7 +2,6 @@ class OrganizationsController < ApplicationController
     before_action :find_organizations, only: [:show, :edit, :update, :destroy]
 
     def index
-        # @organizations = current_user.organizations
         @organizations = Organization.all
     end
 
@@ -54,13 +53,6 @@ class OrganizationsController < ApplicationController
             
             render :edit
         end
-    end
-
-    def join
-        @organization = Organization.find(params[:id])
-        current_user.update_attribute(:organization_id, @organization)
-
-        redirect_to root_path
     end
 
     def destroy

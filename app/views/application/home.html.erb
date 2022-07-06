@@ -8,16 +8,21 @@
             <div class="navigation">
                 <div class="flex-row">
                     <%= link_to "add organization", new_organization_path %>
-                    <%= link_to "add shift", new_user_shift_path(current_user) %>
+
+                    <% if current_user.organization_id.nil? %>
+                        <p></p>
+                    <% else %>
+                        <%= link_to "add shift", new_user_shift_path(current_user) %>
+                    <% end %>
                 </div>
             </div>
     
             <div class="profile-content">
             <h3>your organization:</h3>
                 <% if current_user.organization_id.nil? %>
-                    <p>please join an organization</p>
-                    <% else %>
-                        <p><%= current_user.organization.name %></p>
+                    <p>please join an organization by selecting an organization below</p>
+                <% else %>
+                    <p><%= link_to(current_user.organization.name, user_path(current_user)) %></p>
                 <% end %>
 
                 <h3>all organizations:</h3>
@@ -25,7 +30,7 @@
                     <% @organizations = Organization.all %>
                     <% @organizations.map do |organization| %>
                         <div class="organizations">
-                        <%= link_to(organization.name, organization_path(organization)) %>
+                            <%= link_to(organization.name, organization_path(organization)) %>
                         </div>
                     <% end %>
                 </div>

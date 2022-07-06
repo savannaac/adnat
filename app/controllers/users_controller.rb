@@ -31,6 +31,8 @@ class UsersController < ApplicationController
         end
     
         def show
+            # @organization = Organization.find(params[:organization_id])
+            @organization = current_user.organization
         end
     
         def update

@@ -6,12 +6,12 @@ h1 {
     color: #000;
     font-family: futura, sans-serif;
     font-size: 3rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
     text-align: center;
 }
 
 h2 {
-    color: #626567;
+    color: #424949;
     font-size: 2rem;
     font-family: futura, sans-serif;
     font-weight: 100;
@@ -69,6 +69,13 @@ p {
 .flex-row {
     display: flex;
     flex-direction: row;
+    /* justify-content: flex-start; */
+}
+
+.float-left {
+    display: flex;
+    flex-direction: row;
+    float: left;
 }
 
 .smaller-margins {
@@ -155,7 +162,6 @@ ul li{
     box-shadow: 3px 6px #E5E7E9;
     height: 75vh;
     margin: auto;
-    margin-top: 5rem;
     overflow: scroll;
     width: 50vh;
 }

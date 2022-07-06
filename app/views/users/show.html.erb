@@ -1,0 +1,35 @@
+<h1>ADNAT</h1> 
+
+<% if current_user %>
+    <div class="profile-container">
+        <center>
+            <%= render "partials/name" %>
+
+            <div class="navigation">
+                <div class="flex-row">
+                    <%= link_to "← home", root_path %>
+                </div>
+            </div>
+        </center>
+
+    <div class="profile-content">
+            <h3>your organization: <%= @organization.name %></h3>
+
+            <div class="smaller-margins"> 
+                <%= link_to 'leave', organization_user_leave_path(current_user, @organization), :class => "button" %>
+            </div>
+
+        <h5>hourly rate: </h5>
+        <p>$<%= @organization.hourly_rate %></p>
+
+        <h5>shifts:</h5>
+        <% shifts = @organization.shifts %>
+        <% shifts.each do |shift| %>
+            <p>employee: <%= shift.user_id %><p>
+            <p>break length: <%= shift.break_length %><p><br>
+<% end %>
+    </div>
+    </div>
+<% else %>
+    <%= render "partials/links" %>
+<% end %>
