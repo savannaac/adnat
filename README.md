@@ -49,7 +49,7 @@ When **ADNAT** is up and running,
   - select values for "shift start" and "shift end" (time is 24H clock)
   - enter the break length in minutes
 5. Add away!
-6. Log out by selecting the "x"
+6. Log out by selecting the "sign out"
 
 ### Additional Usage
 - Leave organization by selecting your organization (under "your organization:") on the home page
