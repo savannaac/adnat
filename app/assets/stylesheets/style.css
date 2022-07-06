@@ -45,7 +45,7 @@ h5 {
 
 p {
     color: #000;
-    font-size: .9rem;
+    font-size: .8rem;
     font-family: futura, sans-serif;
     font-weight: 100;
     margin-left: 1rem;
@@ -53,7 +53,7 @@ p {
     text-align: left;
 }
 
-/* text styling for organizations list */
+/* text styling for object lists */
 .organizations {
     color: #000;
     font-size: .9rem;
@@ -63,6 +63,12 @@ p {
     margin-top: -1rem;
     padding: .5rem;
     text-align: left;
+}
+
+.bottom-border {
+    border-bottom: 1px solid #D0D3D4;
+    padding: .5rem;
+    padding-top: 2rem;
 }
 
 /* navigation links */
@@ -154,7 +160,7 @@ ul li{
    padding-bottom: 1.5rem;
   }
 
-/* app container */
+/* app containers */
 .profile-container {
     background: #fff;
     border: 1px solid #D0D3D4;
@@ -164,6 +170,17 @@ ul li{
     margin: auto;
     overflow: scroll;
     width: 50vh;
+}
+
+.user-profile-container {
+    background: #fff;
+    border: 1px solid #D0D3D4;
+    border-radius: 10px;
+    box-shadow: 3px 6px #E5E7E9;
+    height: 75vh;
+    margin: auto;
+    overflow: scroll;
+    width: 75vh;
 }
 
 .profile-content {

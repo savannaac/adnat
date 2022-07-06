@@ -42,12 +42,6 @@
 #         user_id: 1, organization_id: 1, start: DateTime.new(2022, 7, 03, 10), finish: DateTime.new(2022, 7, 03, 16), break_length: 30  
 #     },
     # { 
-    #   user_id: 2, organization_id: 1, start: DateTime.new(2022, 7, 05, 10), finish: DateTime.new(2022, 7, 05, 16), break_length: 60 
-    # },
-    # {
-    #     user_id: 4, 
-    #     start: DateTime.new(2022, 7, 04, 12), 
-    #     finish: DateTime.new(2022, 7, 04, 18), 
-    #     break_length: 45    
+    #   user_id: 4, organization_id: 1, start: DateTime.new(2022, 7, 05, 10), finish: DateTime.new(2022, 7, 05, 16), break_length: 60 
     # }
 # ])

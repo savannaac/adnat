@@ -6,7 +6,6 @@ class ShiftsController < ApplicationController
     def index
         # @organization = Organization.includes(:shifts).find(params[:organization_id])
         @shifts = Shift.all
-        # @shifts = Shift.where(organization: params[:organization])
     end
 
     def new

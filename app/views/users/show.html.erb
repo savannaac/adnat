@@ -1,7 +1,7 @@
 <h1>ADNAT</h1> 
 
 <% if current_user %>
-    <div class="profile-container">
+    <div class="user-profile-container">
         <center>
             <%= render "partials/name" %>
 
@@ -25,9 +25,24 @@
         <h5>shifts:</h5>
         <% shifts = @organization.shifts %>
         <% shifts.each do |shift| %>
-            <p>employee: <%= shift.user_id %><p>
-            <p>break length: <%= shift.break_length %><p><br>
-<% end %>
+            <div class="bottom-border">
+                <div class="flex-row">
+                    <p>employee:<br> <%= shift.user_name %><p>
+                    <p>shift date:<br> <%= shift.created_at.strftime("%m-%d-%Y") %></p>
+                    <p>start time:<br> <%= shift.start.strftime("%I:%M%p") %></p>
+                    <p>end time:<br> <%= shift.finish.strftime("%I:%M%p") %></p>
+                    <p>hours worked:<br>
+                        <% @shift_length = shift.finish.to_time - shift.start.to_time %>
+                        <% @length_in_minutes = @shift_length / 60 %>
+                        <% @minutes_worked = @length_in_minutes - shift.break_length %>
+                        <% @hours_worked = @minutes_worked / 60 %>
+                        
+                        <%= @hours_worked %>
+                    </p>
+                    <p>break length:<br> <%= shift.break_length %><p>
+                </div>
+            </div>
+        <% end %>
     </div>
     </div>
 <% else %>
