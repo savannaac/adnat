@@ -12,45 +12,54 @@
             </div>
         </center>
 
-    <div class="user-profile-content">
-            <h3>your organization: <%= @organization.name %></h3>
+        <div class="user-profile-content">
+            <% if current_user.organization_id.nil? %>
+                    <h3>welcome!</h3>
+                    <h4>join or add an organization</h4>
+            <% else %>
+                    <h3>your organization: <%= @organization.name %></h3>
 
-            <div class="smaller-margins"> 
-                <%= link_to 'leave', organization_user_leave_path(current_user, @organization), :class => "button" %>
-            </div>
+                    <div class="smaller-margins"> 
+                        <%= link_to 'leave', organization_user_leave_path(current_user, @organization), :class => "button" %>
+                    </div>
 
-        <h5>hourly rate: </h5>
-        <p>$<%= @organization.hourly_rate %></p>
+                <h5>hourly rate: </h5>
+                <p>$<%= @organization.hourly_rate %></p>
 
-        <h5>shifts:</h5>
-        <% shifts = @organization.shifts %>
-        <% shifts.each do |shift| %>
-            <div class="bottom-border">
-                <div class="flex-row">
-                    <p>employee:<br> <%= shift.user_name %><p>
-                    <p>shift date:<br> <%= shift.start.strftime("%m-%d-%Y") %></p>
-                    <p>start time:<br> <%= shift.start.strftime("%I:%M%p") %></p>
-                    <p>end time:<br> <%= shift.finish.strftime("%I:%M%p") %></p>
-                    <p>break length:<br> <%= shift.break_length %><p>
-                    <p>hours worked:<br>
-                        <% @shift_length = shift.finish.to_time - shift.start.to_time %>
-                        <% @length_in_minutes = @shift_length / 60 %>
-                        <% @minutes_worked = @length_in_minutes - shift.break_length %>
-                        <% @hours_worked = @minutes_worked / 60 %>
+                <h5>employees:  </h5>
+                <% users = @organization.users %>
+                <% users.each do |user| %>
+                    <p><%= user.name %></p>
+                <% end %>
 
-                        <%= @hours_worked %>
-                    </p>
-                    <p>wages earned: 
-                    <% @shift_cost = @hours_worked * shift.organization_hourly_rate %>
+                <h5>shifts:</h5>
+                <% shifts = @organization.shifts %>
+                <% shifts.each do |shift| %>
+                    <div class="bottom-border">
+                        <div class="flex-row">
+                            <p>employee:<br> <%= shift.user_name %><p>
+                            <p>shift date:<br> <%= shift.start.strftime("%m-%d-%Y") %></p>
+                            <p>start time:<br> <%= shift.start.strftime("%I:%M%p") %></p>
+                            <p>end time:<br> <%= shift.finish.strftime("%I:%M%p") %></p>
+                            <p>break length:<br> <%= shift.break_length %><p>
+                            <p>hours worked:<br>
+                                <% @shift_length = shift.finish.to_time - shift.start.to_time %>
+                                <% @length_in_minutes = @shift_length / 60 %>
+                                <% @minutes_worked = @length_in_minutes - shift.break_length %>
+                                <% @hours_worked = @minutes_worked / 60 %>
 
-                    $<%= @shift_cost %>
-                </p>
+                                <%= @hours_worked %>
+                            </p>
+                            <p>wages earned: 
+                                <% @shift_cost = @hours_worked * shift.organization_hourly_rate %>
 
-
-                </div>
-            </div>
-        <% end %>
-    </div>
+                                $<%= @shift_cost %>
+                            </p>
+                        </div>
+                    </div>
+                <% end %>
+            <% end %>
+        </div>
     </div>
 <% else %>
     <%= render "partials/links" %>

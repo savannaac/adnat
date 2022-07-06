@@ -15,8 +15,6 @@
 
         <div class="profile-content">
             <h3>your organization: <%= current_user.organization.name %></h3>
-            <p>user_id: <%= current_user.id %></p><br>
-            <p>organization_id: <%= current_user.organization_id %></p>
 
             <h3>add shift</h3>
                 <%= form_with model: @shift, url: user_shifts_path(current_user, @shift), method: "post" do |f| %>
