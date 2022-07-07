@@ -219,7 +219,7 @@ ul li{
     border: 1px solid #B3B6B7;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-    height: 75vh;
+    height: 80vh;
     margin: auto;
     overflow: scroll;
     width: 50vh;
@@ -258,7 +258,7 @@ ul li{
 
 .organizations-container {
     float: left;
-    height: 15vh;
+    height: 35vh;
     margin-top: -2rem;
     overflow: scroll;
     padding-top: 1.5rem;

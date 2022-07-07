@@ -13,24 +13,19 @@
         </center>
 
         <div class="profile-content">
-                <h3 style="color: #D4AC0D"><%= @organization.name %></h3>
+                <h3 style="color: #D4AC0D; text-align:center;"><%= @organization.name %></h3>
 
                 <% if current_user.organization_id.nil? %>
                     <div class="smaller-margins">
                         <div class="float-left">
-                            <%= link_to 'join', organization_user_join_path(@organization, current_user), :class => "button" %>
-                            <%= button_to "delete", @organization, method: "delete", :class => "button" %><br /> 
+                            <%= link_to 'join', organization_user_join_path(@organization, current_user), :class => "button" %> 
                         </div>
                     </div>
                 <% else %>
-                    <div class="smaller-margins">
-                        <div class="decrease-bottom-margin">
-                            <%= button_to "delete", @organization, method: "delete", :class => "button" %><br />
-                        </div> 
-                    </div>
+                    <p></p>
                 <% end %>
 
-            <br><br><h5>hourly rate: </h5>
+            <h5>hourly rate: </h5>
             <p>$<%= @organization.hourly_rate %></p>
             
             <h5>members: </h5>
@@ -41,7 +36,10 @@
     
             <% if current_user.organization_id == @organization.id %>
                 <h3>edit current organization</h3>
-                <%= render "partials/edit_organization_form" %>
+                <%= render "partials/edit_organization_form" %><br>
+                
+                <h3>delete current organization</h3>
+                <%= button_to "delete", @organization, method: "delete", :class => "button" %>
             <% else %>
                 <p></p>
             <% end %>
