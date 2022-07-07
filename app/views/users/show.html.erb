@@ -26,6 +26,7 @@
 
                     <div class="smaller-margins"> 
                         <%= link_to 'leave', organization_user_leave_path(current_user, @organization), :class => "button" %>
+                        <%= link_to "add shift", new_user_shift_path(current_user), :class => "button" %>
                     </div>
 
                 <h5>hourly rate: </h5>
