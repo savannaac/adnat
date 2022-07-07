@@ -56,7 +56,7 @@ When **ADNAT** is up and running,
 - Leave organization by selecting your organization (under "your organization:") on the home page
 - Must belong to organization to edit (select joined organization under "all organizations:")
 - Delete organization by selecting any organization (under "all organizations:") on the home page
-  - Must belong to organization to delete
+  - Must leave your own organization to delete
 
 
 ## Contributing

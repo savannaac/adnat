@@ -25,7 +25,7 @@
                     <p></p>
                 <% end %>
 
-            <h5>hourly rate: </h5>
+            <br><br><h5>hourly rate: </h5>
             <p>$<%= @organization.hourly_rate %></p>
             
             <h5>members: </h5>
@@ -38,10 +38,9 @@
                 <h3>edit current organization</h3>
                 <%= render "partials/edit_organization_form" %><br>
                 
-                <h3>delete current organization</h3>
-                <%= button_to "delete", @organization, method: "delete", :class => "button" %>
-            <% else %>
-                <p></p>
+                <% else %>
+                    <h3>delete current organization</h3>
+                    <%= button_to "delete", @organization, method: "delete", :class => "button" %>
             <% end %>
         </div>
     </div>
