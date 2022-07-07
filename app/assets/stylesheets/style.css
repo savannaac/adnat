@@ -1,57 +1,71 @@
 body {
-    background-color: #F2F3F4;
+    background-color: #ECF0F1;
 }
 
 h1 {
     color: #000;
-    font-family: futura, sans-serif;
-    font-size: 3rem;
+    /* font-family: futura, sans-serif; */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem;
+    font-style: italic;
+    font-weight: 900;
     margin-bottom: 1.5rem;
     text-align: center;
 }
 
 h2 {
-    color: #5D6D7E;
-    font-size: 2rem;
-    font-family: futura, sans-serif;
-    font-weight: 100;
+    color: #2E4053;
+    font-size: 2.8rem;
+    font-family: "Montserrat", sans-serif;
+    font-style: italic;
+    font-weight: 600;
     margin-bottom: -.1rem;
     text-transform: uppercase;
 }
 
 h3 {
-    color: #626567;
+    color: #717D7E;
     /* float: left; */
-    font-size: 1.2rem;
-    font-family: futura, sans-serif;
-    font-weight: 100;
+    font-size: 1.5rem;
+    font-family: "Montserrat", sans-serif;
+    font-style: italic;
+    font-weight: 500;
     text-align: left;
 }
 
 /* for password validation */
 h4 {
-    color: #909497;
-    font-size: .8rem;
-    font-family: futura, sans-serif;
-    font-weight: 100;
+    color: #95A5A6;
+    font-size: 1rem;
+    font-family: "Montserrat", sans-serif;
+    font-style: italic;
+    font-weight: 500;
     margin-bottom: -1rem; 
 }
 
 h5 {
-    color: #909497;
-    font-size: .8rem;
-    font-family: futura, sans-serif;
-    font-weight: 100;
+    color: #95A5A6;
+    font-size: 1rem;
+    font-family: "Montserrat", sans-serif;
+    font-style: italic;
+    font-weight: 500;
 }
 
 p {
     color: #000;
-    font-size: .8rem;
-    font-family: futura, sans-serif;
+    font-size: .9rem;
+    font-family: "Montserrat", sans-serif;
     font-weight: 100;
     margin-left: 1rem;
     margin-top: -1rem;
     text-align: left;
+}
+
+.gradient-text {
+    background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
 }
 
 .field-labels {
@@ -66,10 +80,10 @@ p {
 .organizations {
     color: #000;
     font-size: .9rem;
-    font-family: futura, sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 100;
     margin-left: 1rem;
-    margin-top: -1rem;
+    margin-top: -.8rem;
     padding: .5rem;
     text-align: left;
 }
@@ -97,25 +111,46 @@ p {
     margin-top: -.7rem;
 }
 
+.decrease-bottom-margin {
+    margin-bottom: -3rem;
+}
+
 .navigation {
     margin-bottom: -.5rem;
-    margin-top: 1.5rem;
+    margin-top: 1.7rem;
 }
 
 a:visited, a:link, a:active
 {
-    color: #B7950B;
-    font-family: futura, sans-serif;
+    color: #7B7D7D;
+    font-family: "Montserrat", sans-serif;
     font-size: .9rem;
-    font-weight: 100;
+    font-style: italic;
+    font-weight: 500;
     margin: auto;
+    position: relative;
     text-decoration: none;
 }
 
-a:hover {
-    color: #000;
-    text-decoration: none;
+a::before {
+    background-color: #18272F;
+    border-radius: 4px;
+    bottom: 0;
+    content: '';
+    height: 3px;
+    left: 0;
+    position: absolute;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
+    width: 100%;
+  }
+
+a:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
 }
+
 
 .shared-links {
     color: #909497;
@@ -137,42 +172,53 @@ ul li{
 }
 
 .button {
-    background-color: #fff;
-    border: 1px solid #D0D3D4;
-    border-radius: 7px;
-    box-shadow: 0 3px #E5E7E9;
-    color: #626567;
+    background: #FCFCFD;
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px #d6d6e7;
+    color: #36395a;
+    cursor: pointer;
+    display: inline-block;
     font-family: century gothic, sans-serif;
-    padding: 5px;
-    width: 5rem;  
+    height: 35px;
+    outline: 0;
+    padding: 5px 20px;
+    transition: box-shadow 0.15s ease,transform 0.15s ease;
+    will-change: box-shadow,transform;
+    transition: box-shadow 0.15s ease,transform 0.15s ease;
 }
 
 .button:hover {
-    background-color: #F2F3F4;
-    color: #000;
+    box-shadow: 0px 4px 8px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px #d6d6e7;
+    transform: translateY(-2px);
+}
+    
+.button:active {
+    box-shadow: inset 0px 3px 7px #d6d6e7;
+    transform: translateY(2px);
 }
 
 /* sign up & login */
 .registration-card {
     background-color: #fff;
-    border: 1px solid #D0D3D4;
+    border: 1px solid #B3B6B7;
     border-radius: 10px;
-    box-shadow: 3px 6px #E5E7E9;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     margin: auto;
     width: 25%;
 }
 
 .registration-fields {
     margin-top: 1rem;
-   padding-bottom: 1.5rem;
+   padding-bottom: 1.7rem;
   }
 
 /* app containers */
 .profile-container {
     background: #fff;
-    border: 1px solid #D0D3D4;
+    border: 1px solid #B3B6B7;
     border-radius: 10px;
-    box-shadow: 3px 6px #E5E7E9;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     height: 75vh;
     margin: auto;
     overflow: scroll;
@@ -181,18 +227,18 @@ ul li{
 
 .user-profile-container {
     background: #fff;
-    border: 1px solid #D0D3D4;
+    border: 1px solid #B3B6B7;
     border-radius: 10px;
-    box-shadow: 3px 6px #E5E7E9;
-    height: 80vh;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    height: 75vh;
     margin: auto;
     overflow: scroll;
-    width: 75vh;
+    width: 85vh;
 }
 
 .profile-content {
     background: #fff;
-    border-top: 1px solid #D0D3D4;;
+    border-top: 1px solid #D0D3D4;
     height: 60vh;
     margin: auto;
     margin-top: 2rem;
@@ -202,18 +248,18 @@ ul li{
 
 .user-profile-content {
     background: #fff;
-    border-top: 1px solid #D0D3D4;;
+    border-top: 1px solid #D0D3D4;
     height: 60vh;
     margin: auto;
     margin-top: 2rem;
     overflow: scroll;
-    width: 65vh;
+    width: 75vh;
 }
 
 .organizations-container {
     float: left;
     height: 15vh;
-    margin-top: -1rem;
+    margin-top: -2rem;
     overflow: scroll;
     padding-top: 1.5rem;
     width: 40vh;

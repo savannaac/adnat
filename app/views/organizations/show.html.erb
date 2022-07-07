@@ -24,11 +24,13 @@
                     </div>
                 <% else %>
                     <div class="smaller-margins">
-                        <%= button_to "delete", @organization, method: "delete", :class => "button" %><br /> 
+                        <div class="decrease-bottom-margin">
+                            <%= button_to "delete", @organization, method: "delete", :class => "button" %><br />
+                        </div> 
                     </div>
                 <% end %>
 
-            <br><h5>hourly rate: </h5>
+            <br><br><h5>hourly rate: </h5>
             <p>$<%= @organization.hourly_rate %></p>
             
             <h5>members: </h5>
@@ -37,8 +39,12 @@
                 <p><%= user.name %></p>
             <% end %>
     
-            <h3>edit current organization</h3>
-            <%= render "partials/edit_organization_form" %>
+            <% if current_user.organization_id == @organization.id %>
+                <h3>edit current organization</h3>
+                <%= render "partials/edit_organization_form" %>
+            <% else %>
+                <p></p>
+            <% end %>
         </div>
     </div>
 <% else %>

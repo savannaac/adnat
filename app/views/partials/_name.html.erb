@@ -1,4 +1,4 @@
-<h2><%= current_user.name %></h2><br>
+<h2 class="gradient-text"><%= current_user.name %></h2><br>
 <div class="smaller-margins">
     <%= button_to "sign out", destroy_user_session_path, method: "delete", :class => "button"%>
 </div>
