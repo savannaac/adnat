@@ -1,6 +1,6 @@
 class ShiftsController < ApplicationController
-    before_action :find_user, only: [:new, ]
-    before_action :find_shifts, only: [:edit, :update, :show, :destroy]
+    before_action :find_user, only: [:new]
+    before_action :find_shift, only: [:edit, :update, :show, :destroy]
 
     def index
         @shifts = Shift.all
@@ -35,7 +35,7 @@ class ShiftsController < ApplicationController
     def update
         if @shift.update(shift_params)
 
-            redirect_to @shift
+            redirect_to user_path(current_user)
         else
             render :edit
         end
@@ -44,7 +44,7 @@ class ShiftsController < ApplicationController
     def destroy
         @shift.destroy 
 
-        redirect_to user_organization_path(current_user, @organization)
+        redirect_to user_path(current_user)
     end
 
     private
@@ -57,6 +57,6 @@ class ShiftsController < ApplicationController
         end
 
         def find_shift
-            @shift = @user.shifts
+            @shift = Shift.find(params[:id])
         end
 end

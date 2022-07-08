@@ -61,6 +61,15 @@
 
                                 $<%= @shift_cost %>
                             </p>
+
+                            <% if shift.user_id == current_user.id %>
+                                <div class="increase-margin-right"
+                                    <br><%= link_to "edit", edit_user_shift_path(current_user, shift), :class => "button" %>
+                                </div>
+                                <%= button_to "delete", user_shift_path(current_user, shift), method: "delete", :class => "button" %>
+                            <% else %>
+                                <p></p>
+                            <% end %>
                         </div>
                     </div>
                 <% end %>

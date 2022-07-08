@@ -115,6 +115,10 @@ p {
     margin-bottom: -3rem;
 }
 
+.increase-margin-right {
+    margin-right: .2rem;
+}
+
 .navigation {
     margin-bottom: -.5rem;
     margin-top: 1.7rem;

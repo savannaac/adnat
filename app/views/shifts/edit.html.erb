@@ -1,0 +1,43 @@
+<h1>ADNAT</h1>
+
+<% if @shift.user_id == current_user.id %>
+    <div class="user-profile-container">
+        <center>
+            <%= render "partials/name" %>
+
+            <div class="navigation">
+                <div class="flex-row">
+                    <%= link_to "← back", :back %>
+                </div>
+            </div>
+        </center>
+
+        <div class="user-profile-content">
+            <h3>current shift:</h3><br>
+                <div class="flex-row">
+                    <p style="font-size:.8rem;">shift date:<br> <%= @shift.start.strftime("%m-%d-%Y") %></p>
+                    <p style="font-size:.8rem;">start time:<br> <%= @shift.start.strftime("%I:%M%p") %></p>
+                    <p style="font-size:.8rem;">end time:<br> <%= @shift.finish.strftime("%I:%M%p") %></p>
+                    <p style="font-size:.8rem;">break length:<br> <%= @shift.break_length %> mins<p>
+                    <p style="font-size:.8rem;">hours worked:<br>
+                        <% @shift_length = @shift.finish.to_time - @shift.start.to_time %>
+                        <% @length_in_minutes = @shift_length / 60 %>
+                        <% @minutes_worked = @length_in_minutes - @shift.break_length %>
+                        <% @hours_worked = @minutes_worked / 60 %>
+
+                        <%= @hours_worked %>
+                    </p>
+                    <p style="font-size:.8rem;">wages earned:<br>
+                        <% @shift_cost = @hours_worked * @shift.organization_hourly_rate %>
+
+                        $<%= @shift_cost %>
+                    </p>
+                </div>
+
+            <h3>edit shift</h3>
+            <%= render "partials/edit_shift_form" %>
+        </div>
+    </div>
+<% else %>
+    <%= render "partials/links" %>
+<% end %>

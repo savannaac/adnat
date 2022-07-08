@@ -1,0 +1,18 @@
+<%= form_with model: @shift, url: user_shift_path(current_user, @shift), method: "patch" do |f| %>
+               
+    <%= f.hidden_field :organization_id, value: current_user.organization.id  %>
+
+    <div class="field-labels">
+        <%= f.label :start, "shift start:" %>
+        <%= f.datetime_select :start, autofocus: true %><br><br>
+        
+        <%= f.label :finish, "shift end:" %>
+        <%= f.datetime_select :finish, autofocus: true %><br><br>
+        
+        <%= f.label :break_length, "break length:" %>
+        <%= f.text_field :break_length, placeholder: "(in minutes)", autofocus: true %>
+    </div><br>
+
+    <%= f.submit "edit", :class => "button" %>
+
+<% end %>
