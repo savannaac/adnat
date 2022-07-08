@@ -24,11 +24,11 @@ Create the database
 
 Run migrations
 
-`rails db:migrate`
+  `rails db:migrate`
 
 (*Optional*) Seed data
 
-`rails db:seed`
+  `rails db:seed`
 
 ### Start the server
 
@@ -52,11 +52,17 @@ When **ADNAT** is up and running,
 6. Log out by selecting the "sign out"
 
 ### Additional Usage
-- Join organization by selecting an organization (under "all organizations:") on the home page
-- Leave organization by selecting your organization (under "your organization:") on the home page
-- Must belong to organization to edit (select joined organization under "all organizations:")
-- Delete organization by selecting any organization (under "all organizations:") on the home page
-  - Must leave your own organization to delete
+
+#### Organization
+  - Join organization by selecting an organization (under "all organizations:") on the home page
+  - Leave organization by selecting your organization (under "your organization:") on the home page
+  - Must belong to organization to edit (select joined organization under "all organizations:")
+  - Delete organization by selecting any organization (under "all organizations:") on the home page
+    - Must leave your own organization to delete
+
+  #### Shift
+  - Edit your shift(s) on your organization's overview page
+  - Delete your shift(s) on your organization's overview page
 
 
 ## Contributing
